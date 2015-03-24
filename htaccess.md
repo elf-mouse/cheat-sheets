@@ -33,11 +33,11 @@ Here is a simple cheatsheet for the .htaccess file:
 ## Block Users from accessing the site
 
 	<limit GET POST PUT>
-	order deny,allow
-	deny from 202.54.122.33
-	deny from 8.70.44.53
-	deny from .spammers.com
-	allow from all
+	  order deny,allow
+	  deny from 202.54.122.33
+	  deny from 8.70.44.53
+	  deny from .spammers.com
+	  allow from all
 	</limit>
 
 ## Allow only LAN users
@@ -74,8 +74,8 @@ Add this below the Hot Link Blocking code:
 ## Stop .htaccess (or any other file) from being viewed
 
 	<files file-name>
-	order allow,deny
-	deny from all
+	  order allow,deny
+	  deny from all
 	</files>
 
 ## Avoid the 500 Error
@@ -122,16 +122,15 @@ To turn this on, just add ContentDigest On.
 
 	# BEGIN GZIP
 	<ifmodule mod_deflate.c>
-	# Combine the below two lines - I've split it up for presentation
-	AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css
-	  application/x-javascript application/javascript
+	  # Combine the below two lines - I've split it up for presentation
+	  AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
 	</ifmodule>
 	# END GZIP
 	Turn off magic_quotes_gpc
 
 	# Only if you use PHP
 	<ifmodule mod_php4.c>
-	php_flag magic_quotes_gpc off
+	  php_flag magic_quotes_gpc off
 	</ifmodule>
 
 ## Set an Expires header and enable Cache-Control
