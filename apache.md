@@ -1,4 +1,4 @@
-# apache
+# Apache Config
 
 ## Setup a Virtual Domain
 
@@ -89,7 +89,7 @@
 
 	RewriteRule ^/news/([0-9]+)$ /news.cfm?id=$1 [PT,L]
 
-## Redirect www.example.com to example.com
+## Redirect `www.example.com` to `example.com`
 
 	RewriteCond %{HTTP_HOST} ^www\.example\.com$ [NC]
 	RewriteRule ^(.*)$ http://example.com$1 [R=301,L]
